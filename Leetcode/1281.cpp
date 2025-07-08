@@ -16,6 +16,15 @@ Constraints:
 1 <= n <= 10^5
 */
 
+/*
+This function takes an integer n as input and returns the result of subtracting the sum of its digits from the product of its digits. The logic 
+begins by initializing two variables: p to 1 (for product) and s to 0 (for sum). It then enters a loop that runs until n becomes 0. In each 
+iteration, it extracts the last digit of n using n % 10, multiplies that digit into p, and adds it into s. The number n is then reduced by 
+removing its last digit using integer division (n /= 10).
+
+After processing all digits, the function returns the difference between the product and the sum of the digits, i.e., p - s. This simple 
+digit-wise computation is often seen in basic number manipulation problems to test understanding of arithmetic operations and loops.
+*/
 class Solution {
 public:
     int subtractProductAndSum(int n) {
