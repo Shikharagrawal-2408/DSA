@@ -36,7 +36,7 @@ To systematically practice and track problems that help in improving ratings and
 | Date       | Rating | Milestone       |
 |------------|--------|-----------------|
 | 2025-07-01 | 1340   | Started 1★ path |
-| 2025-07-15 | 1420   | Solved 25 Qs    |
+| 2025-07-15 | 1420   | Solved 66 Qs    |
 | 2025-07-30 | 1550   | Achieved 2★ ⭐   |
 
 ---
