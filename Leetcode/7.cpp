@@ -29,8 +29,8 @@ digit of n using n % 10 and checks if appending this digit would cause an overfl
 if ((ans > INT_MAX / 10) || (ans < INT_MIN / 10))return 0;
 This condition ensures that multiplying ans by 10 and adding the next digit won't exceed the allowed integer limits.
 
-If it's safe, the digit is added to the result by computing ans = ans * 10 + d, and the original number n is shortened by one digit using integer
- division (n /= 10). The loop continues until n becomes 0. Finally, the reversed number is returned.
+If it's safe, the digit is added to the result by computing ans = ans * 10 + d, and the original number n is shortened by one digit using
+integer division (n /= 10). The loop continues until n becomes 0. Finally, the reversed number is returned.
 
 This function is useful in problems where you need to reverse digits of a number safely while handling potential overflows, such as those found
 in Leetcode-style coding challenges.
