@@ -39,7 +39,7 @@ Test case 4: We are given that 1 out of 2 problems were approved. Thus, 50% of t
 were approved, Munchy is an expert.
 */
 /*
-his C++ program is designed to determine whether a certain percentage condition is met based on user input. Specifically, for each test case, it
+This C++ program is designed to determine whether a certain percentage condition is met based on user input. Specifically, for each test case, it
 takes two integers x and y, and checks whether y is at least 50% of x. To do this, it calculates the expression (y * 100) / x to get the 
 percentage value. If this percentage is greater than or equal to 50, the program outputs "YES"; otherwise, it prints "NO".
 
