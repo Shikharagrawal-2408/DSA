@@ -50,6 +50,19 @@ If (x + 2) % 3 == 0, then Mario ends up HUGE
 The +2 offset aligns the modulo results with the correct final states based on the initial condition (NORMAL at the start). This logic is 
 repeated for each test case. Thus, the program efficiently determines Mario’s transformation state for any number of mushrooms using simple 
 arithmetic and modular math.
+
+OR
+
+We can also use this approach, where we directly take the modulo of x (the number of mushrooms Mario eats) with 3, since the transformation 
+cycle repeats every 3 steps:    NORMAL → HUGE → SMALL → NORMAL → ...
+
+Here’s how the cycle maps:
+If x % 3 == 0, Mario ends up in his original state: NORMAL
+If x % 3 == 1, Mario transforms to the next state: HUGE
+If x % 3 == 2, he moves one more step ahead: SMALL
+
+This avoids the need for shifting the value with +2 and directly maps the remainder to the correct final state based on the initial state being 
+NORMAL. It’s a clean and intuitive alternative that leverages the predictable cyclic nature of Mario’s transformations.
 */
 #include <bits/stdc++.h>
 using namespace std;
