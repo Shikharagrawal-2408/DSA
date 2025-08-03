@@ -54,20 +54,9 @@ that can be reversed, and the array elements. Now, if k == 1, the machine can on
 it cannot make any changes. So, in this case, we simply check if the array is already sorted; if not, we print "No", else "Yes". However, 
 if k > 1, then the machine can reverse at least two adjacent elements, and by doing multiple such operations, any sequence can be rearranged 
 into sorted order. Hence, for all cases where k > 1, the answer is always "Yes". The function rec() handles this logic by either checking if 
-the array is sorted when k == 1, or directly returning "Yes" when k > 1. The main function reads multiple test cases, processes them accordingly, and prints the results.
-
-
-
-
-
-
-
-
-
-Ask ChatGPT
-
+the array is sorted when k == 1, or directly returning "Yes" when k > 1. The main function reads multiple test cases, processes them 
+accordingly, and prints the results.
 */
-
 #include <iostream>
 using namespace std;
  
