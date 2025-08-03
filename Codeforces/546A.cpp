@@ -17,7 +17,13 @@ Output
 13
 */
 /*
-
+In this problem, a soldier wants to buy w bananas. The cost of each banana increases linearly: the first banana costs k dollars, the 
+second costs 2k, the third 3k, and so on, up to w bananas. So, the total cost he needs to pay is the sum of the first w multiples of k, 
+which can be calculated using the arithmetic series formula: k * (1 + 2 + ... + w) = k * w * (w + 1) / 2. However, in the code, instead of 
+using the formula, a simple loop is used to accumulate the total cost (a) by adding k * i for each banana from 1 to w. After computing the 
+total cost, the code compares this amount with the money the soldier already has (n). If he has enough money, the output is 0, meaning he 
+doesn't need to borrow. Otherwise, the program prints how much more money he needs, which is the difference a - n. 
+The max(0, a - n) ensures that if the soldier already has enough money, the output is zero rather than a negative number.
 */
 #include<iostream>
 using namespace std;
