@@ -1,141 +1,56 @@
 /*      Chef and Races
-The National Championships are starting soon. There are 
-4
-4 race categories, numbered from 
-1
-1 to 
-4
-4, that Chef is interested in. Chef is participating in exactly 
-2
-2 of these categories.
-
-Chef has an arch-rival who is, unfortunately, the only person participating who is better than Chef, i.e, Chef can't defeat the arch-rival in any of the four race categories but can defeat anyone else. Chef's arch-rival is also participating in exactly 
-2
-2 of the four categories.
+The National Championships are starting soon. There are 4 race categories, numbered from 1 to 4, that Chef is interested in. 
+Chef is participating in exactly 2 of these categories.
+Chef has an arch-rival who is, unfortunately, the only person participating who is better than Chef, i.e, Chef can't defeat the arch-rival 
+in any of the four race categories but can defeat anyone else. Chef's arch-rival is also participating in exactly 2 of the four categories.
 
 Chef hopes to not fall into the same categories as that of the arch-rival.
 
 Given 
-X
-,
-Y
-,
-A
-,
-B
-X,Y,A,B where 
-X
-,
-Y
-X,Y are the races that Chef participates in, and 
-A
-,
-B
-A,B are the races that Chef's arch-rival participates in, find the maximum number of gold medals (first place) that Chef can win.
+X,Y,A,B where X,Y are the races that Chef participates in, and A,B are the races that Chef's arch-rival participates in, 
+find the maximum number of gold medals (first place) that Chef can win.
 
 Input Format
-The first line of input contains an integer 
-T
-T, denoting the number of testcases. The description of 
-T
-T testcases follows.
-Each testcase consists of a single line containing four space-separated integers — the values of 
-X
-,
-Y
-,
-A
-X,Y,A, and 
-B
-B respectively.
+The first line of input contains an integer T, denoting the number of testcases. The description of T testcases follows.
+Each testcase consists of a single line containing four space-separated integers — the values of X,Y,A, and B respectively.
+
 Output Format
 For each testcase, print a single line containing one integer — the maximum number of gold medals that Chef can win.
-Constraints
-1
-≤
-T
-≤
-144
-1≤T≤144
-1
-≤
-X
-,
-Y
-,
-A
-,
-B
-≤
-4
-1≤X,Y,A,B≤4
-X
-≠
-Y
-X=Y
-A
-≠
-B
-A=B
-Subtasks
-Subtask #1 (100 points): Original constraints
 
-Sample 1:
+Constraints
+1≤T≤144
+1≤X,Y,A,B≤4
+X≠Y
+A≠B
+
 Input
-Output
 3
 4 3 1 2
 4 2 1 2
 2 1 1 2
+
+Output
 2
 1
 0
-Explanation:
-Test case 
-1
-1: Chef participates in the races 
-4
-,
-3
-4,3, whereas Chef's rival participates in 
-1
-,
-2
-1,2. As Chef's only rival does not participate in any of the races that Chef takes part in, Chef can win the gold medal in both of the races, thus the answer is 
-2
-2.
 
-Test case 
-2
-2: Chef participates in the races 
-4
-,
-2
-4,2, whereas Chef's rival participates in 
-1
-,
-2
-1,2. Chef cannot win race 
-2
-2 as Chef will be beaten by the arch-rival, however Chef can win the gold medal for race 
-4
-4. Thus the answer is 
-1
-1.
+Test case 1: Chef participates in the races 4,3, whereas Chef's rival participates in 1,2. As Chef's only rival does not participate in 
+any of the races that Chef takes part in, Chef can win the gold medal in both of the races, thus the answer is 2.
 
-Test case 
-3
-3: Chef participates in the races 
-2
-,
-1
-2,1, whereas Chef's rival participates in 
-1
-,
-2
-1,2. Chef will be beaten by the arch-rival in both races, thus the answer is 
-0
-0.
+Test case 2: Chef participates in the races 4,2, whereas Chef's rival participates in 1,2. Chef cannot win race 2 as Chef will be beaten 
+by the arch-rival, however Chef can win the gold medal for race 4. Thus the answer is 1.
+
+Test case 3: Chef participates in the races 2,1, whereas Chef's rival participates in 1,2. Chef will be beaten by the arch-rival in both 
+races, thus the answer is 0.
+*/
+/*
+The program determines the maximum number of gold medals Chef can win in a championship with four race categories. Chef participates in 
+exactly two categories, and his arch-rival — the only competitor who can defeat him — also participates in two categories. For each test case, 
+the program reads four integers: x and y for Chef’s races, and a and b for the rival’s races. Chef starts with a potential of winning 2 gold 
+medals (gold = 2), assuming no overlap. If Chef’s race x matches either of the rival’s races (a or b), then Chef loses that race, so gold is 
+reduced by 1. The same check is done for Chef’s race y. After both checks, gold represents the number of races Chef can win, and it’s printed 
+as the result for that test case. This ensures that overlaps with the rival’s races are properly counted, and only non-overlapping races are 
+considered as wins.
 */
 #include <bits/stdc++.h>
 using namespace std;
