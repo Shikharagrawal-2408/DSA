@@ -39,7 +39,13 @@ In the second sample, all friends are short enough and no one has to bend, so th
 In the third sample, all the persons have to bend, except the last one. The required minimum width of the road is equal to 2+2+2+2+ 2 + 1 = 11.
 */
 /*
-
+The problem is about calculating the minimum width of a road so that Vanya and his friends can walk in a single row without being noticed by a 
+guard. The road width depends on the height of each person compared to the fence height h. If a friend’s height is less than or equal to h, 
+they can walk normally and take up width 1. If their height is greater than h, they must bend down, taking up width 2. The program starts by 
+reading two integers n and h, representing the number of friends and the fence height. Then it takes an array of n integers for the heights of 
+the friends. It initializes a counter cnt to store the total required width. For each friend, it checks: if their height is greater than h, it 
+adds 2 to the counter; otherwise, it adds 1. After processing all friends, the total width stored in cnt is printed. This ensures the 
+calculated road width is just enough for everyone to pass without attracting the guard’s attention.
 */
 #include<iostream>
 using namespace std;
