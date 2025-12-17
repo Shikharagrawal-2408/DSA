@@ -38,8 +38,80 @@ Yes
 No
 */
 /*
-
+This solution uses a two-pointer technique to check for a palindrome without creating any extra string. 
+One pointer starts from the beginning and the other from the end, and both move inward. At each step, 
+non-alphanumeric characters are skipped using isalnum, which automatically ignores symbols and whitespaces as 
+required by the problem. When both pointers land on valid characters, they are compared after converting them 
+to lowercase, ensuring the check is case-insensitive. If at any point the characters don’t match, the function 
+immediately returns false. If the pointers cross without finding a mismatch, the string satisfies all conditions 
+and is a palindrome. The approach runs in O(n) time and uses constant extra space, making it both efficient 
+and clean.
 */
+#include <bits/stdc++.h> 
+bool checkPalindrome(string s)
+{
+    int left=0,right=s.length()-1;
+    while(left<right)
+    {
+        while(left<right && !isalnum(s[left]))
+        left++;
+
+        while(left<right && !isalnum(s[right]))
+        right--;
+        
+        if(tolower(s[left])!=tolower(s[right]))
+        return false;
+
+        left++;
+        right--;
+    }
+    return true;
+}
+
+/*
+#include <bits/stdc++.h> 
+bool checkPalindrome(string s)
+{
+    string res="";
+    for(int i=0;i<s.length();i++)
+    {
+        if(isalnum(s[i]))
+        res+=tolower(s[i]);
+    }
+    int left=0,right=res.length()-1;
+    while(left<right)
+    {
+        if(res[left]!=res[right])
+        return false;
+        left++;
+        right--;
+    }
+    return true;
+}
+*/
+/*
+bool isPalindrome(string s) {
+        vector<char> arr;
+        
+        for (char c : s) {
+            if (isalnum(c)) {
+                arr.push_back(tolower(c));
+            }
+        }
+
+        int left = 0, right = arr.size() - 1;
+
+        while (left < right) {
+            if (arr[left] != arr[right])
+                return false;
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+*/
+/*
 #include <bits/stdc++.h> 
 bool checkPalindrome(string s)
 {
@@ -73,26 +145,4 @@ bool checkPalindrome(string s)
     }
     return true;
 }
-
-/*
-bool isPalindrome(string s) {
-        vector<char> arr;
-        
-        for (char c : s) {
-            if (isalnum(c)) {
-                arr.push_back(tolower(c));
-            }
-        }
-
-        int left = 0, right = arr.size() - 1;
-
-        while (left < right) {
-            if (arr[left] != arr[right])
-                return false;
-            left++;
-            right--;
-        }
-
-        return true;
-    }
 */
