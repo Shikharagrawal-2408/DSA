@@ -1,10 +1,12 @@
 // LINK:-https://www.naukri.com/code360/problems/sum-of-two-arrays_893186?utm_source=youtube&utm_medium=affiliate&utm_campaign=love_babbar_4&leftPanelTabValue=PROBLEM
 /* Sum of Two Arrays
-You are given two numbers 'A' and 'B' in the form of two arrays (A[] and B[]) of lengths 'N' and 'M' respectively, where each array element represents a digit. You need to find the sum of these two numbers and return this sum in the form of an array.
+You are given two numbers 'A' and 'B' in the form of two arrays (A[] and B[]) of lengths 'N' and 'M' respectively, where each array element 
+represents a digit. You need to find the sum of these two numbers and return this sum in the form of an array.
 
 1. The length of each array is greater than zero.
 
-2. The first index of each array is the most significant digit of the number. For example, if the array A[] = {4, 5, 1}, then the integer represented by this array is 451 and array B[] = {3, 4, 5} so the sum will be 451 + 345 = 796. So you need to return {7, 9, 6}.
+2. The first index of each array is the most significant digit of the number. For example, if the array A[] = {4, 5, 1}, then the integer 
+represented by this array is 451 and array B[] = {3, 4, 5} so the sum will be 451 + 345 = 796. So you need to return {7, 9, 6}.
 
 3. Both numbers do not have any leading zeros in them. And subsequently, the sum should not contain any leading zeros.
 
@@ -42,7 +44,13 @@ Sample Output 2:
 7 9 6
 2 3
 */
-/*This solution performs manual digit-by-digit addition, exactly the way you would add two numbers on paper, without converting the arrays into integers (which would be unsafe for large sizes). Two pointers start from the last index of each array, representing the least significant digits, and a carry variable keeps track of overflow from the previous addition. In each iteration, the current digits (if available) and the carry are added to form a sum; the unit digit of this sum is pushed into the result array, and the carry is updated for the next step. The loop continues as long as there are digits left in either array or a remaining carry. Since digits are added from right to left, the result is built in reverse order and finally reversed to restore the correct most-significant-digit-first format. The algorithm runs in O(max(n, m)) time and uses O(max(n, m)) extra space for the result.
+/*This solution performs manual digit-by-digit addition, exactly the way you would add two numbers on paper, without converting the arrays 
+into integers (which would be unsafe for large sizes). Two pointers start from the last index of each array, representing the least significant 
+digits, and a carry variable keeps track of overflow from the previous addition. In each iteration, the current digits (if available) and the 
+carry are added to form a sum; the unit digit of this sum is pushed into the result array, and the carry is updated for the next step. The loop 
+continues as long as there are digits left in either array or a remaining carry. Since digits are added from right to left, the result is built 
+in reverse order and finally reversed to restore the correct most-significant-digit-first format. The algorithm runs in O(max(n, m)) time and 
+uses O(max(n, m)) extra space for the result.
 */
 #include <bits/stdc++.h> 
 vector<int> findArraySum(vector<int>&a, int n, vector<int>&b, int m) {
