@@ -1,3 +1,4 @@
+// LINK:- https://www.naukri.com/code360/problems/modular-exponentiation_1082146
 /* Modular Exponentiation
 
 You are given a three integers 'X', 'N', and 'M'. Your task is to find ('X' ^ 'N') % 'M'. A ^ B is defined as A raised to power B and A % C is 
@@ -37,7 +38,6 @@ effectively dividing it by 2. This process continues until n becomes zero. The u
 intermediate steps. The final result is the modular exponentiation result in logarithmic time with respect to n.
 */
 #include <bits/stdc++.h>
-
 int modularExponentiation(int x, int n, int m) {
 int ans=1;
 
